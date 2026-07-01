@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Text;
 
-namespace University_System_ERD___Models
+namespace University_System_ERD___Models.model
 {
     public class Student
     {
