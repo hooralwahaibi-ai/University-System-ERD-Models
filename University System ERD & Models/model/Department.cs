@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Text;
 
-namespace University_System_ERD___Models.model
+namespace UniversitySystemERDModels.model
 {
     public class Department
     {
@@ -29,5 +29,8 @@ namespace University_System_ERD___Models.model
 
         [InverseProperty("headedDepartment")]
         public Instructor? headInstructor { get; set; } // Navigation property: department head
+
+        [InverseProperty("department")]
+        public ICollection<Course> courses { get; set; } = new List<Course>(); // Navigation property
     }
 }

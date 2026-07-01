@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Text;
 
-namespace University_System_ERD___Models.model
+namespace UniversitySystemERDModels.model
 {
     public class Enrollment
     {
@@ -22,6 +22,9 @@ namespace University_System_ERD___Models.model
         [Required]
         [ForeignKey("course")]
         public int courseId { get; set; } // Foreign key
+
+        [InverseProperty("enrollments")]
+        public Course course { get; set; } = null!; // Navigation property
 
         [Required]
         public DateTime enrollmentDate { get; set; } // System generated
